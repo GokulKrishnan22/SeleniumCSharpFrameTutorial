@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EDF4429-251A-416D-BB68-93F227191BCF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeleniumCSharpFrameWork</RootNamespace>
+    <AssemblyName>SeleniumCSharpFrameWork</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.Debugger.Parallel.MultiValueVisualizers, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClass\BaseTest.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.5.AssemblyAttributes.cs" />
+    <Compile Include="ParallelTesting.cs" />
+    <Compile Include="OrderSkipAttribute.cs" />
+    <Compile Include="SeleniumCSharp.cs" />
+    <Compile Include="TestClass.cs" />
+    <Compile Include="Utilities\BrowserUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\nunit_random_seed.tmp" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="packages.config" />
+    <None Include="packages\NUnit.3.11.0\.signature.p7s" />
+    <None Include="packages\NUnit.3.11.0\build\NUnit.props" />
+    <None Include="packages\NUnit.3.11.0\CHANGES.md" />
+    <None Include="packages\NUnit.3.11.0\NUnit.3.11.0.nupkg" />
+    <None Include="packages\NUnit3TestAdapter.3.13.0\.signature.p7s" />
+    <None Include="packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props" />
+    <None Include="packages\NUnit3TestAdapter.3.13.0\build\netcoreapp1.0\NUnit3TestAdapter.props" />
+    <None Include="packages\NUnit3TestAdapter.3.13.0\NUnit3TestAdapter.3.13.0.nupkg" />
+    <None Include="packages\Selenium.Support.3.141.0\.signature.p7s" />
+    <None Include="packages\Selenium.Support.3.141.0\Selenium.Support.3.141.0.nupkg" />
+    <None Include="packages\Selenium.WebDriver.3.141.0\.signature.p7s" />
+    <None Include="packages\Selenium.WebDriver.3.141.0\Selenium.WebDriver.3.141.0.nupkg" />
+    <None Include="packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\.signature.p7s" />
+    <None Include="packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\build\Selenium.WebDriver.ChromeDriver.targets" />
+    <None Include="packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\driver\linux64\chromedriver" />
+    <None Include="packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\driver\mac64\chromedriver" />
+    <None Include="packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\Selenium.WebDriver.ChromeDriver.83.0.4103.3900.nupkg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\chromedriver.exe" />
+    <Content Include="obj\Debug\SeleniumCSharpFrameWork.csproj.FileListAbsolute.txt" />
+    <Content Include="packages\NUnit.3.11.0\lib\net20\nunit.framework.dll" />
+    <Content Include="packages\NUnit.3.11.0\lib\net20\nunit.framework.pdb" />
+    <Content Include="packages\NUnit.3.11.0\lib\net20\nunit.framework.xml" />
+    <Content Include="packages\NUnit.3.11.0\lib\net20\NUnit.System.Linq.dll" />
+    <Content Include="packages\NUnit.3.11.0\lib\net35\nunit.framework.dll" />
+    <Content Include="packages\NUnit.3.11.0\lib\net35\nunit.framework.pdb" />
+    <Content Include="packages\NUnit.3.11.0\lib\net35\nunit.framework.xml" />
+    <Content Include="packages\NUnit.3.11.0\lib\net40\nunit.framework.dll" />
+    <Content Include="packages\NUnit.3.11.0\lib\net40\nunit.framework.pdb" />
+    <Content Include="packages\NUnit.3.11.0\lib\net40\nunit.framework.xml" />
+    <Content Include="packages\NUnit.3.11.0\lib\net45\nunit.framework.dll" />
+    <Content Include="packages\NUnit.3.11.0\lib\net45\nunit.framework.pdb" />
+    <Content Include="packages\NUnit.3.11.0\lib\net45\nunit.framework.xml" />
+    <Content Include="packages\NUnit.3.11.0\lib\netstandard1.4\nunit.framework.dll" />
+    <Content Include="packages\NUnit.3.11.0\lib\netstandard1.4\nunit.framework.pdb" />
+    <Content Include="packages\NUnit.3.11.0\lib\netstandard1.4\nunit.framework.xml" />
+    <Content Include="packages\NUnit.3.11.0\lib\netstandard2.0\nunit.framework.dll" />
+    <Content Include="packages\NUnit.3.11.0\lib\netstandard2.0\nunit.framework.pdb" />
+    <Content Include="packages\NUnit.3.11.0\lib\netstandard2.0\nunit.framework.xml" />
+    <Content Include="packages\NUnit.3.11.0\LICENSE.txt" />
+    <Content Include="packages\NUnit.3.11.0\NOTICES.txt" />
+    <Content Include="packages\NUnit3TestAdapter.3.13.0\build\net35\nunit.engine.api.dll" />
+    <Content Include="packages\NUnit3TestAdapter.3.13.0\build\net35\nunit.engine.dll" />
+    <Content Include="packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3.TestAdapter.dll" />
+    <Content Include="packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3.TestAdapter.pdb" />
+    <Content Include="packages\NUnit3TestAdapter.3.13.0\build\netcoreapp1.0\nunit.engine.netstandard.dll" />
+    <Content Include="packages\NUnit3TestAdapter.3.13.0\build\netcoreapp1.0\NUnit3.TestAdapter.dll" />
+    <Content Include="packages\NUnit3TestAdapter.3.13.0\build\netcoreapp1.0\NUnit3.TestAdapter.pdb" />
+    <Content Include="packages\NUnit3TestAdapter.3.13.0\LICENSE.txt" />
+    <Content Include="packages\Selenium.Support.3.141.0\lib\net35\WebDriver.Support.dll" />
+    <Content Include="packages\Selenium.Support.3.141.0\lib\net35\WebDriver.Support.xml" />
+    <Content Include="packages\Selenium.Support.3.141.0\lib\net40\WebDriver.Support.dll" />
+    <Content Include="packages\Selenium.Support.3.141.0\lib\net40\WebDriver.Support.xml" />
+    <Content Include="packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll" />
+    <Content Include="packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.xml" />
+    <Content Include="packages\Selenium.Support.3.141.0\lib\netstandard2.0\WebDriver.Support.dll" />
+    <Content Include="packages\Selenium.Support.3.141.0\lib\netstandard2.0\WebDriver.Support.xml" />
+    <Content Include="packages\Selenium.WebDriver.3.141.0\lib\net35\WebDriver.dll" />
+    <Content Include="packages\Selenium.WebDriver.3.141.0\lib\net35\WebDriver.xml" />
+    <Content Include="packages\Selenium.WebDriver.3.141.0\lib\net40\WebDriver.dll" />
+    <Content Include="packages\Selenium.WebDriver.3.141.0\lib\net40\WebDriver.xml" />
+    <Content Include="packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll" />
+    <Content Include="packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.xml" />
+    <Content Include="packages\Selenium.WebDriver.3.141.0\lib\netstandard2.0\WebDriver.dll" />
+    <Content Include="packages\Selenium.WebDriver.3.141.0\lib\netstandard2.0\WebDriver.xml" />
+    <Content Include="packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\driver\win32\chromedriver.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="ScreenShots\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit.3.11.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets'))" />
+    <Error Condition="!Exists('packages\Selenium.InternetExplorer.WebDriver.3.150.1\build\Selenium.InternetExplorer.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.InternetExplorer.WebDriver.3.150.1\build\Selenium.InternetExplorer.WebDriver.targets'))" />
+  </Target>
+  <Import Project="packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('packages\Selenium.WebDriver.ChromeDriver.83.0.4103.3900\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('packages\Selenium.Firefox.WebDriver.0.26.0\build\Selenium.Firefox.WebDriver.targets')" />
+  <Import Project="packages\Selenium.InternetExplorer.WebDriver.3.150.1\build\Selenium.InternetExplorer.WebDriver.targets" Condition="Exists('packages\Selenium.InternetExplorer.WebDriver.3.150.1\build\Selenium.InternetExplorer.WebDriver.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
